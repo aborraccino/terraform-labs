@@ -1,0 +1,11 @@
+/aws-iam/.terraform/
+/aws-iam/.terraform.lock.hcl
+/aws-s3/.terraform/
+/aws-s3/.terraform.lock.hcl
+/lab01/.terraform/
+/lab01/.terraform.lock.hcl
+/meta-arguments-count/count/.terraform/
+/meta-arguments-count/count/.terraform.lock.hcl
+/meta-arguments-count/foreach/.terraform/
+/meta-arguments-count/foreach/.terraform.lock.hcl
+/.idea/
