@@ -24,21 +24,23 @@ data "aws_iam_group" "sapphire-group" {
 
 resource "aws_s3_bucket_policy" "sapphire-policy" {
   bucket = aws_s3_bucket.my-s3-bucket.id
-  policy = <<EOF
-	{
-    	"Statement": [
-        	{
-            	"Action": "*",
-            	"Effect": "Allow",
-            	"Resource": "arn:aws:s3::${aws_s3_bucket.my-s3-bucket.id}/*",
-		"Principal": {
-			"AWS": [
-			  "${data.aws_iam_group.sapphire-group.arn}"
-			]
-		}
-        	}
-    	],
-    	"Version": "2012-10-19"
-	}
-  EOF
+  policy = data.aws_iam_policy_document.sapphire-policy.json
+}
+
+data "aws_iam_policy_document" "sapphire-policy" {
+  statement {
+    principals {
+      type        = "AWS"
+      identifiers = [data.aws_iam_group.sapphire-group.arn]
+    }
+
+    actions = [
+      "s3:GetObject",
+      "s3:ListBucket",
+    ]
+
+    resources = [
+      aws_s3_bucket.my-s3-bucket.arn
+    ]
+  }
 }
