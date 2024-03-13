@@ -9,3 +9,5 @@
 /meta-arguments-count/foreach/.terraform/
 /meta-arguments-count/foreach/.terraform.lock.hcl
 /.idea/
+/dynamodb/.terraform.lock.hcl
+/dynamodb/.terraform/
