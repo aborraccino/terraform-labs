@@ -11,3 +11,5 @@
 /.idea/
 /dynamodb/.terraform.lock.hcl
 /dynamodb/.terraform/
+/aws-ec2/.terraform.lock.hcl
+/aws-ec2/.terraform/
