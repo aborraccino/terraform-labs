@@ -10,4 +10,4 @@ resource "aws_key_pair" "web" {
 }
 ```
 
-Once the EC2 instance is create access to the remote machine run the command ``ssh -i /home/aborraccino/.ssh/id_rsa/aws-ec2 ubuntu@<public-ip>``
+Once the EC2 instance is created access to the remote machine run the command ``ssh -i /home/aborraccino/.ssh/id_rsa/aws-ec2 ubuntu@<public-ip>``
